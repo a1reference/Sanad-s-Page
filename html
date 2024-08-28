@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanad Ihsan Ali Al-Bahar - Mechanical Engineer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1A4D80;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #1A4D80;
+            color: #ffcc00;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #ffcc00;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #1A4D80;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero-section {
+            background-color: #1A4D80;
+            color: #ffcc00;
+            padding: 100px 20px;
+            text-align: center;
+            background-image: url('your-hero-image.jpg'); /* Replace with your own image */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            margin-top: 20px;
+        }
+
+        .content-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content-section ul li {
+            background-color: #ffcc00;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #1A4D80;
+        }
+
+        footer {
+            background-color: #1A4D80;
+            color: #ffcc00;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sanad</h1>
+        <p id="changing-text">Mechanical Engineer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero-section">
+        <h2>Innovating the Future of Mechanical Engineering</h2>
+        <p>Passionate about creating efficient, sustainable, and cutting-edge mechanical solutions.</p>
+    </section>
+
+    <section class="content-section" id="about">
+        <h2>About Me</h2>
+        <p>I am Sanad Ihsan Ali Al-Bahar, a dedicated Mechanical Engineer with extensive experience in mechanical design, analysis, and project management. My mission is to innovate and provide sustainable engineering solutions that meet the challenges of the modern world.</p>
+    </section>
+
+    <section class="content-section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Advanced Mechanical Design and Analysis</li>
+            <li>Proficient in CAD Software (AutoCAD, SolidWorks)</li>
+            <li>Expertise in Finite Element Analysis (FEA)</li>
+            <li>Comprehensive Project Management Skills</li>
+            <li>3D Printing and Rapid Prototyping</li>
+        </ul>
+    </section>
+
+    <section class="content-section" id="projects">
+        <h2>Projects</h2>
+        <p>Throughout my career, I have worked on several innovative projects, including:</p>
+        <ul>
+            <li>High-efficiency turbine design for renewable energy applications.</li>
+            <li>Optimization of heat exchangers for improved industrial energy efficiency.</li>
+            <li>Development of 3D printed prototypes for new mechanical systems.</li>
+        </ul>
+    </section>
+
+    <section class="content-section" id="contact">
+        <h2>Contact</h2>
+        <p>If you would like to collaborate or learn more about my work, feel free to reach out:</p>
+        <p>Email: iworksanad@gmail.com</p>
+        <p>Phone: +90 552 534 92 38</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sanad. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const titles = ["Mechanical Engineer", "Graphic Designer", "Writer", "The Big Brother Of The Battlefield", "Entrepreneur"];
+        let index = 0;
+        const changeText = () => {
+            document.getElementById("changing-text").textContent = titles[index];
+            index = (index + 1) % titles.length;
+        };
+        setInterval(changeText, 1000); // Change title every 1 second
+    </script>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
