@@ -20,8 +20,8 @@
         }
 
         header {
-            background-color: #004276;
-            color: #ffd11a;
+            background-color: #1A4D80;
+            color: #ffcc00;
             padding: 50px 20px;
             text-align: center;
         }
@@ -37,7 +37,7 @@
         }
 
         nav {
-            background-color: #ffd11a;
+            background-color: #ffcc00;
             padding: 15px 0;
             text-align: center;
             position: sticky;
@@ -46,7 +46,7 @@
         }
 
         nav a {
-            color: #004276;
+            color: #1A4D80;
             margin: 0 20px;
             text-decoration: none;
             font-size: 1.1em;
@@ -55,8 +55,8 @@
         }
 
         .hero-section {
-            background-color: #004276;
-            color: #ffd11a;
+            background-color: #1A4D80;
+            color: #ffcc00;
             padding: 100px 20px;
             text-align: center;
             background-image: url('your-hero-image.jpg'); /* Replace with your own image */
@@ -83,7 +83,7 @@
 
         .content-section h2 {
             font-size: 2em;
-            color: #ffd11a;
+            color: #ffcc00;
             margin-bottom: 20px;
         }
 
@@ -98,16 +98,48 @@
         }
 
         .content-section ul li {
-            background-color: #ffd11a;
             margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            color: #1A4D80;
+             padding: 10px 0; /* Adjusted to fit the line */
+             border-bottom: 1px solid #ffcc00; /* Adds a yellow line under the text */
+             color: #ffcc00; /* Keeps the text yellow */
         }
 
+        #contact-follow {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        .contact, .follow-me {
+            flex: 1;
+            min-width: 200px; /* Ensures the sections don't get too small */
+        }
+
+        .follow-me {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact h2, .follow-me h2 {
+            font-size: 2.5em; /* Large text */
+            color: #ffcc00;  /* Matches the yellow color scheme */
+            margin-bottom: 0;
+        }
+
+        .social-icon {
+            width: 50px; /* Adjust size of the logo */
+            height: 50px;
+            margin-top: 10px;
+        }
+        
         footer {
-            background-color: #004276;
-            color: #ffd11a;
+            background-color: #1A4D80;
+            color: #ffcc00;
             text-align: center;
             padding: 20px;
         }
@@ -161,12 +193,22 @@
         </ul>
     </section>
 
-    <section class="content-section" id="contact">
+    <section class="content-section" id="contact-follow">
+    <div class="contact">
         <h2>Contact</h2>
         <p>If you would like to collaborate or learn more about my work, feel free to reach out:</p>
         <p>Email: iworksanad@gmail.com</p>
         <p>Phone: +90 552 534 92 38</p>
-    </section>
+    </div>
+
+    <div class="follow-me">
+        <h2>Follow Me</h2>
+        <a href="https://www.instagram.com/sanad4_13" target="_blank">
+            <img src="instagram.png" alt="Instagram" class="social-icon">
+        </a>
+    </div>
+</section>
+
 
     <footer>
         <p>&copy; 2024 Sanad. All rights reserved.</p>
