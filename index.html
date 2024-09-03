@@ -37,7 +37,7 @@
         }
 
         nav {
-            background-color: #ffcc00;
+            background-color: #1A4D80;
             padding: 15px 0;
             text-align: center;
             position: sticky;
@@ -46,7 +46,7 @@
         }
 
         nav a {
-            color: #1A4D80;
+            color: #ffcc00;
             margin: 0 20px;
             text-decoration: none;
             font-size: 1.1em;
@@ -99,9 +99,27 @@
 
         .content-section ul li {
             margin: 10px 0;
-             padding: 10px 0; /* Adjusted to fit the line */
-             border-bottom: 1px solid #ffcc00; /* Adds a yellow line under the text */
-             color: #ffcc00; /* Keeps the text yellow */
+            padding: 10px 0;
+            border-bottom: 1px solid transparent; /* Initially transparent */
+            color: #ffcc00; /* Keeps the text yellow */
+            position: relative; /* Required for the pseudo-element positioning */
+        }
+
+        .content-section ul li::after {
+            content: '';
+            display: block;
+            width: 100%; /* Match the width of the text */
+            height: 1px;
+            background-color: #ffcc00;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+            width: 0; /* Start with no underline */
+        }
+
+        .content-section ul li:hover::after {
+            width: 100%; /* Full width underline on hover */
         }
 
         #contact-follow {
@@ -141,6 +159,7 @@
             background-color: #1A4D80;
             color: #ffcc00;
             text-align: center;
+            padding: 20px;
         }
 
         footer p {
