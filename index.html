@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanad Ihsan Ali Al-Bahar - Mechanical Engineer</title>
+    <title>Sanad.</title>
     <style>
         @font-face {
             font-family: 'Flaunters';
@@ -14,14 +14,14 @@
             font-family: 'Flaunters', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1A4D80;
+            background-color: #004B87;
             color: #fff;
             scroll-behavior: smooth;
         }
 
         header {
-            background-color: #1A4D80;
-            color: #ffcc00;
+            background-color: #004B87;
+            color: #FFCC00;
             padding: 50px 20px;
             text-align: center;
         }
@@ -37,7 +37,7 @@
         }
 
         nav {
-            background-color: #1A4D80;
+            background-color: #004B87;
             padding: 15px 0;
             text-align: center;
             position: sticky;
@@ -46,17 +46,33 @@
         }
 
         nav a {
-            color: #ffcc00;
-            margin: 0 20px;
+            color: #FFCC00;
+            margin: 0 10px;
             text-decoration: none;
             font-size: 1.1em;
-            font-weight: bold;
             cursor: pointer;
+            position: relative; /* Required for the pseudo-element */
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0; /* Initially no underline */
+            height: 0.5px; /* Thickness of the underline */
+            background: #FFCC00; /* Same color as the text */
+            transition: width 0.16s ease-in-out; /* Smooth animation */
+            position: absolute;
+            bottom: -5px; /* Adjust to position the underline */
+            left: 0;
+        }
+
+        nav a:hover::after {
+            width: 100%; /* Full width underline on hover */
         }
 
         .hero-section {
-            background-color: #1A4D80;
-            color: #ffcc00;
+            background-color: #004B87;
+            color: #FFCC00;
             padding: 100px 20px;
             text-align: center;
             background-image: url('your-hero-image.jpg'); /* Replace with your own image */
@@ -83,12 +99,13 @@
 
         .content-section h2 {
             font-size: 2em;
-            color: #ffcc00;
+            color: #FFCC00;
             margin-bottom: 20px;
         }
 
         .content-section p {
             font-size: 1.1em;
+            color: #FFCC00;
             line-height: 1.8;
         }
 
@@ -101,7 +118,7 @@
             margin: 10px 0;
             padding: 10px 0;
             border-bottom: 1px solid transparent; /* Initially transparent */
-            color: #ffcc00; /* Keeps the text yellow */
+            color: #FFCC00; /* Keeps the text yellow */
             position: relative; /* Required for the pseudo-element positioning */
         }
 
@@ -110,7 +127,7 @@
             display: block;
             width: 100%; /* Match the width of the text */
             height: 1px;
-            background-color: #ffcc00;
+            background-color: #FFCC00;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -132,6 +149,7 @@
 
         .contact, .follow-me {
             flex: 1;
+            color: #FFCC00;
             min-width: 200px; /* Ensures the sections don't get too small */
         }
 
@@ -145,7 +163,7 @@
 
         .contact h2, .follow-me h2 {
             font-size: 2.5em; /* Large text */
-            color: #ffcc00;  /* Matches the yellow color scheme */
+            color: #FFCC00;  /* Matches the yellow color scheme */
             margin-bottom: 0;
         }
 
@@ -156,8 +174,8 @@
         }
         
         footer {
-            background-color: #1A4D80;
-            color: #ffcc00;
+            background-color: #004B87;
+            color: #FFCC00;
             text-align: center;
             padding: 20px;
         }
@@ -169,7 +187,7 @@
 </head>
 <body>
     <header>
-        <h1>Sanad</h1>
+        <h1>Sanad.</h1>
         <p id="changing-text">Mechanical Engineer</p>
     </header>
 
