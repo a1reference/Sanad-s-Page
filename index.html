@@ -52,22 +52,13 @@
             font-size: 1.1em;
             cursor: pointer;
             position: relative; /* Required for the pseudo-element */
+            transition: transform 0.3s ease;
+            transform-origin: bottom center;
+            display: inline-block;
         }
 
-        nav a::after {
-            content: '';
-            display: block;
-            width: 0; /* Initially no underline */
-            height: 0.5px; /* Thickness of the underline */
-            background: #FFCC00; /* Same color as the text */
-            transition: width 0.16s ease-in-out; /* Smooth animation */
-            position: absolute;
-            bottom: -5px; /* Adjust to position the underline */
-            left: 0;
-        }
-
-        nav a:hover::after {
-            width: 100%; /* Full width underline on hover */
+        nav a:hover {
+            transform: scale(1.2); /* Full width underline on hover */
         }
 
         .hero-section {
@@ -120,23 +111,11 @@
             border-bottom: 1px solid transparent; /* Initially transparent */
             color: #FFCC00; /* Keeps the text yellow */
             position: relative; /* Required for the pseudo-element positioning */
+            transition: transform 0.3s ease;
         }
 
-        .content-section ul li::after {
-            content: '';
-            display: block;
-            width: 100%; /* Match the width of the text */
-            height: 1px;
-            background-color: #FFCC00;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease-in-out;
-            width: 0; /* Start with no underline */
-        }
-
-        .content-section ul li:hover::after {
-            width: 100%; /* Full width underline on hover */
+        .content-section ul li:hover {
+            transform: translateX(10px)
         }
 
         #contact-follow {
@@ -181,7 +160,6 @@
         }
 
         footer p {
-            padding: 0;
             margin: 0;
         }
     </style>
@@ -258,7 +236,7 @@
             document.getElementById("changing-text").textContent = titles[index];
             index = (index + 1) % titles.length;
         };
-        setInterval(changeText, 1000); // Change title every 1 second
+        setInterval(changeText, 1400); // Change title every 1 second
     </script>
 
     <script>
