@@ -58,7 +58,7 @@
         }
 
         nav a:hover {
-            transform: scale(1.2); /* Full width underline on hover */
+            transform: scale(1.1); /* Full width underline on hover */
         }
 
         .hero-section {
@@ -111,7 +111,7 @@
             border-bottom: 1px solid transparent; /* Initially transparent */
             color: #FFCC00; /* Keeps the text yellow */
             position: relative; /* Required for the pseudo-element positioning */
-            transition: transform 0.3s ease;
+             transition: transform 0.3s ease;
         }
 
         .content-section ul li:hover {
@@ -135,9 +135,9 @@
         .follow-me {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             align-items: center;
             text-align: center;
+            gap: 20px;
         }
 
         .contact h2, .follow-me h2 {
@@ -146,12 +146,23 @@
             margin-bottom: 0;
         }
 
+        .social-icons {
+        display: flex; /* Puts the icons on the same line */
+        gap: 20px; /* Space between the icons */
+    }
+
         .social-icon {
             width: 50px; /* Adjust size of the logo */
             height: 50px;
             margin-top: 10px;
+            transition: transform 0.3s ease;
+            display: block;
         }
-        
+
+        .social-icon:hover {
+                transform: scale(1.1); /* Move icon up on hover */
+        }
+
         footer {
             background-color: #004B87;
             color: #FFCC00;
@@ -218,10 +229,17 @@
 
     <div class="follow-me">
         <h2>Follow Me</h2>
+    <div class="social-icons">
         <a href="https://www.instagram.com/sanad4_13" target="_blank">
             <img src="instagram.png" alt="Instagram" class="social-icon">
         </a>
-    </div>
+        <a href="https://www.twitter.com/yourprofile" target="_blank">
+            <img src="twitter.png" alt="Twitter" class="social-icon">
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+        </div>
 </section>
 
 
