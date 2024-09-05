@@ -141,26 +141,58 @@
         }
 
         .contact h2, .follow-me h2 {
-            font-size: 2.5em; /* Large text */
+            font-size: 2em; /* Large text */
             color: #FFCC00;  /* Matches the yellow color scheme */
             margin-bottom: 0;
         }
 
         .social-icons {
-        display: flex; /* Puts the icons on the same line */
-        gap: 20px; /* Space between the icons */
-    }
+            display: flex; /* Puts the icons on the same line */
+            gap: 20px; /* Space between the icons */
+        }
 
         .social-icon {
-            width: 50px; /* Adjust size of the logo */
-            height: 50px;
+            width: 40px; /* Adjust size of the logo */
+            height: 40px;
             margin-top: 10px;
             transition: transform 0.3s ease;
             display: block;
         }
 
         .social-icon:hover {
-                transform: scale(1.1); /* Move icon up on hover */
+            transform: scale(1.1); /* Move icon up on hover */
+        }
+
+        .highlight {
+            color: #FFCC00; /* Yellow highlight color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .highlight:hover {
+            color: #00FF00; /* Change to green on hover */
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible columns */
+            gap: 20px; /* Space between each skill */
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background-color: #004B87; /* Same background color */
+            color: #FFCC00; /* Yellow text */
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover animation */
+            cursor: default;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1); /* Enlarge on hover */
+            background-color: #004b94; /* Darker background on hover */
         }
 
         footer {
@@ -168,6 +200,7 @@
             color: #FFCC00;
             text-align: center;
             padding: 20px;
+            cursor: default;
         }
 
         footer p {
@@ -200,13 +233,18 @@
 
     <section class="content-section" id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>Advanced Mechanical Design and Analysis</li>
-            <li>Proficient in CAD Software (AutoCAD, SolidWorks)</li>
-            <li>Expertise in Finite Element Analysis (FEA)</li>
-            <li>Comprehensive Project Management Skills</li>
-            <li>3D Printing and Rapid Prototyping</li>
-        </ul>
+            <div class="skills-grid">
+                <div class="skill-item">Mechanical Design and Analysis</div>
+                <div class="skill-item">CAD Software (AutoCAD, SolidWorks)</div>
+                <div class="skill-item">Finite Element Analysis (FEA)</div>
+                <div class="skill-item">Thermodynamics and Heat Transfer</div>
+                <div class="skill-item">Project Management</div>
+                <div class="skill-item">Manufacturing Processes</div>
+                <div class="skill-item">Material Science</div>
+                <div class="skill-item">Structural Analysis</div>
+                <div class="skill-item">Fluid Mechanics</div>
+                <div class="skill-item">3D Printing and Prototyping</div>
+            </div>
     </section>
 
     <section class="content-section" id="projects">
@@ -223,8 +261,8 @@
     <div class="contact">
         <h2>Contact</h2>
         <p>If you would like to collaborate or learn more about my work, feel free to reach out:</p>
-        <p>Email: iworksanad@gmail.com</p>
-        <p>Phone: +90 552 534 92 38</p>
+        <p>Email: <a href="mailto:iworksanad@gmail.com" class="highlight">iworksanad@gmail.com</a></p> <!-- Email link -->
+        <p>Phone: <a href="tel:+905525349238" class="highlight">+90 552 534 92 38</a></p> <!-- Phone link -->
     </div>
 
     <div class="follow-me">
@@ -244,7 +282,7 @@
 
 
     <footer>
-        <p>&copy; 2024 Sanad. All rights reserved.</p>
+        <p>&copy; 2024 <span class="highlight">Sanad</span>. All rights reserved.</p>
     </footer>
 
     <script>
