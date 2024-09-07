@@ -94,15 +94,10 @@
             margin-bottom: 20px;
         }
 
-        .content-section p {
-            font-size: 1.1em;
-            color: #FFCC00;
-            line-height: 1.8;
-        }
-
         .content-section ul {
             list-style-type: none;
             padding: 0;
+            cursor: pointer;
         }
 
         .content-section ul li {
@@ -111,7 +106,7 @@
             border-bottom: 1px solid transparent; /* Initially transparent */
             color: #FFCC00; /* Keeps the text yellow */
             position: relative; /* Required for the pseudo-element positioning */
-             transition: transform 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .content-section ul li:hover {
@@ -175,19 +170,25 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible columns */
-            gap: 20px; /* Space between each skill */
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); /* Make sure all boxes are equal */
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            max-width: 1000px; /* Limit the total width */
+            margin: 0 auto; /* Center the grid */
         }
 
         .skill-item {
-            background-color: #004B87; /* Same background color */
-            color: #FFCC00; /* Yellow text */
-            padding: 20px;
+            background-color: #004B87;
+            color: #FFCC00;
             text-align: center;
-            border-radius: 4px;
-            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover animation */
-            cursor: default;
+            padding: 20px; /* Add padding for spacing */
+            border-radius: 15px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            height: 50px; /* Ensures equal height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center text vertically */
         }
 
         .skill-item:hover {
@@ -206,6 +207,70 @@
         footer p {
             margin: 0;
         }
+        
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 9999; /* Increase z-index */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scrolling for the entire modal if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            /* Existing styles */
+            position: relative; /* This ensures the close button is positioned relative to this box */
+            background-color: #004B87;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 960px;
+            max-height: 90vh;
+            margin: auto;
+            overflow-y: auto;
+            color: #FFCC00;
+            display: flex;
+            flex-direction: column;
+            margin-top: 1.5%;
+            margin-bottom: 1.5%;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+        }
+
+        .modal-content::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+
+        .modal-content img {
+            width: 100%;
+            margin-bottom: 20px; /* Add space between images and text */
+            border-radius: 15px; /* Adjust this value for the desired roundness */
+        }
+
+        .modal-content p {
+            color: #FFCC00; /* Ensure text matches your theme */
+            font-size: 1.1em; /* Adjust the font size */
+        }
+
+        .close {
+            color: #FFCC00;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px; /* This positions it inside the modal content */
+            cursor: pointer;
+        }
+
+        .close:hover, .close:focus {
+            color: #FFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -234,26 +299,25 @@
     <section class="content-section" id="skills">
         <h2>Skills</h2>
             <div class="skills-grid">
-                <div class="skill-item">Mechanical Design and Analysis</div>
-                <div class="skill-item">CAD Software (AutoCAD, SolidWorks)</div>
-                <div class="skill-item">Finite Element Analysis (FEA)</div>
+                <div class="skill-item">Mechanical Design</div>
+                <div class="skill-item">CAD</div>
+                <div class="skill-item">FEA</div>
                 <div class="skill-item">Thermodynamics and Heat Transfer</div>
                 <div class="skill-item">Project Management</div>
                 <div class="skill-item">Manufacturing Processes</div>
-                <div class="skill-item">Material Science</div>
+                <div class="skill-item">Prototyping</div>
                 <div class="skill-item">Structural Analysis</div>
                 <div class="skill-item">Fluid Mechanics</div>
-                <div class="skill-item">3D Printing and Prototyping</div>
+                <div class="skill-item">3D Printing</div>
             </div>
     </section>
 
     <section class="content-section" id="projects">
         <h2>Projects</h2>
-        <p>Throughout my career, I have worked on several innovative projects, including:</p>
         <ul>
-            <li>High-efficiency turbine design for renewable energy applications.</li>
-            <li>Optimization of heat exchangers for improved industrial energy efficiency.</li>
-            <li>Development of 3D printed prototypes for new mechanical systems.</li>
+            <li onclick="openModal('project1')">High-efficiency turbine design for renewable energy applications.</li>
+            <li onclick="openModal('project2')">Optimization of heat exchangers for improved industrial energy efficiency.</li>
+            <li onclick="openModal('project3')">Development of 3D printed prototypes for new mechanical systems.</li>
         </ul>
     </section>
 
@@ -265,6 +329,14 @@
         <p>Phone: <a href="tel:+905525349238" class="highlight">+90 552 534 92 38</a></p> <!-- Phone link -->
     </div>
 
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalBody"></div> <!-- This is where the image-text pairs go -->
+        </div>
+    </div>
+
     <div class="follow-me">
         <h2>Follow Me</h2>
     <div class="social-icons">
@@ -274,7 +346,7 @@
         <a href="https://www.twitter.com/yourprofile" target="_blank">
             <img src="twitter.png" alt="Twitter" class="social-icon">
         </a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+        <a href="https://www.linkedin.com/in/sanad-al-bahar-b12a502a8/" target="_blank">
             <img src="linkedin.png" alt="LinkedIn" class="social-icon">
         </a>
         </div>
@@ -305,5 +377,75 @@
             });
         });
     </script>
+
+    <script>
+    // Get modal elements
+    var modal = document.getElementById("projectModal");
+    var modalTitle = document.getElementById("modalTitle");
+    var modalBody = document.getElementById("modalBody"); // Correctly target modalBody
+
+    // Projects data with image-text pairs
+    const projects = {
+        "project1": {
+            title: "High-efficiency Turbine Design",
+            content: [
+                { img: "image1.jpg", text: "This is the first image description." },
+                { img: "image2.jpg", text: "This is the second image description." },
+                { img: "image3.jpg", text: "This is the third image description." }
+            ]
+        },
+        "project2": {
+            title: "Optimization of Heat Exchangers",
+            content: [
+                { img: "image4.jpg", text: "Optimized heat exchangers for improved efficiency." },
+                { img: "image5.jpg", text: "This is the second image of the project." }
+            ]
+        },
+        "project3": {
+            title: "3D Printed Prototypes",
+            content: [
+                { img: "image6.jpg", text: "Created 3D printed prototypes for new systems." }
+            ]
+        }
+    };
+
+    // Open modal and populate it with image-text content
+    function openModal(projectKey) {
+    var project = projects[projectKey];
+        modalTitle.innerText = project.title;
+        modalBody.innerHTML = ''; // Clear previous content to avoid duplication
+
+        // Populate modal with image-text pairs
+        project.content.forEach(function(item) {
+            var imgElement = document.createElement("img");
+            imgElement.src = item.img;
+            imgElement.style.width = "100%";
+            imgElement.style.marginBottom = "20px";
+            
+            var textElement = document.createElement("p");
+            textElement.innerText = item.text;
+
+            modalBody.appendChild(imgElement);
+            modalBody.appendChild(textElement);
+        });
+
+        modal.style.display = "block"; // Show the modal
+}
+
+    // Close the modal when the user clicks on <span> (x)
+    var span = document.querySelector(".close");
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal when the user clicks outside of the modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+
 </body>
 </html>
